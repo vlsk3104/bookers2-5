@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>search-function_bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <div class="row">
+        <p id="notice"><%= notice %></p>
+        <p id="flash"><%= alert %></p>
+          <% if user_signed_in? %>
+            <div class="col-xs-8 offset-xs-2">
+              <%= render 'layouts/search' %>
+            </div>  
+          <% end %>
+        <div>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
